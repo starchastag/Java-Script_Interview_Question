@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>function</title>
-    <script src="basic.js"></script>
+    <title>Document</title>
 </head>
 <body>
-    <h1>hello sparta</h1>
+    <input type="text" name="name",id="name"/>
+    <button onclick="greet()">
+        Greet
+    </button>
+    <div class="greet">
+
+    </div>
 </body>
+<script type="text/javascript">
+    function greet(){
+        // alert("yvvares");
+        var name = document.getElementById('name').value;
+        var string = "hello"+name;
+        document.getElementsByClassName('greet')[0].innerHTML = string;
+    }
+
+</script>
 </html>
