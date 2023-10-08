@@ -114,17 +114,17 @@ console.log("Hello Saprta");
 
 // -------javascript string are imutable  
 
-let str = "hello";
-str[0] = "p";
-str[1] = "l";
-// console.log(str)   --- string will not allow change element so that is immutable
+// let str = "hello";
+// str[0] = "p";
+// str[1] = "l";
+// // console.log(str)   --- string will not allow change element so that is immutable
 
-st = str + "Programmers"
-console.log(str);
+// st = str + "Programmers"
+// console.log(str);
 
-const a = new String("Hello world"); 
-// a === "hello world is false"
-const b = String('Hellow World');
+// const a = new String("Hello world"); 
+// // a === "hello world is false"
+// const b = String('Hellow World');
 // b ==="hello world is true"
 // a instanceof String ; //is true
 // b instanceof String; // is false
@@ -135,6 +135,45 @@ const b = String('Hellow World');
 
 // const sym = Symbol('example');
 // String(sym);
+// ===============================Array======================
+
+// // three method in Array
+// acessior
+// iteration
+// mutator
+// <<===============for each method in array
+const books =[
+    "the lord of the rigs",
+    "here we got ot",
+    "digital forencis",
+]
+const flipTitles = function (elem,index){
+    console.log(elem.split(' ').reverse().join(' '));
+}
+books.forEach(flipTitles);
+
+
+
+
+// a funtion called gruo array elements that takes an array an interger n as arguments and gruops the element of the array in n subarray
+
+function grupArrayElements(inputArr,n){
+    // check if n is vaild number
+    const result = []
+    if(n<=0 || (Number.isInteger(n))){
+        return result;
+    }
+   
+// length of the subarray
+    const len = Math.floor(inputArr.length / n);
+    // initialise th Array
+    let stat
+
+
+}
+
+
+
 
 
 //----------------mathmatical operator in string -----------------------------------------
@@ -321,28 +360,28 @@ const b = String('Hellow World');
 
 // it is just like a variable holding some piece of code 
 
-// ------------------Declaration
-function nameofFunction(){
-    console.log("You are running code present inside the function")
-}
+// // ------------------Declaration
+// function nameofFunction(){
+//     console.log("You are running code present inside the function")
+// }
 
-// function call
-nameofFunction()
+// // function call
+// nameofFunction()
 
-// declaration
-    function nameofFunction(){
-        console.log("We are running code present inside the function")
-    }
-//    calling function -->
-    nameofFunction()
+// // declaration
+//     function nameofFunction(){
+//         console.log("We are running code present inside the function")
+//     }
+// //    calling function -->
+//     nameofFunction()
 
- // <!--------------- function expression ----------------->
-    let fun = function(){ // also called anonyms function
-                  console.log("This is an example of function expression")
-    }
+//  // <!--------------- function expression ----------------->
+//     let fun = function(){ // also called anonyms function
+//                   console.log("This is an example of function expression")
+//     }
 
 // <!-- calling function expression -->
-    fun()
+    // fun()
 
 
 // real example
@@ -391,25 +430,25 @@ nameofFunction()
 // let invetation = name => ` Welcome ${name} to this event`
 // console.log(invetation("conders army"))   // withour braces 
 
-let invetation = name => {
-    return ` Welcome ${name} to this event`
-}
-console.log(invetation("conders army")) 
+// let invetation = name => {
+//     return ` Welcome ${name} to this event`
+// }
+// console.log(invetation("conders army")) 
 
 
-// <--------Passing function as an Arguments (Higher order function example)
+// // <--------Passing function as an Arguments (Higher order function example)
 
-let upperCase = function(str){
-    return str.toUpperCase();
-}
-let lowerCase = function(str){
-    return str.toLowerCase();
-}
-let transformer = function(str,fun){
-    return fun(str)
-}
-console.log(transformer("hello",upperCase));
-console.log(transformer("HELLO",lowerCase));
+// let upperCase = function(str){
+//     return str.toUpperCase();
+// }
+// let lowerCase = function(str){
+//     return str.toLowerCase();
+// }
+// let transformer = function(str,fun){
+//     return fun(str)
+// }
+// console.log(transformer("hello",upperCase));
+// console.log(transformer("HELLO",lowerCase));
 
 
 // <----------------function returning another function
@@ -418,19 +457,19 @@ console.log(transformer("HELLO",lowerCase));
 
 
 
-let comliment = function(msg){
-    return function(name){
-        console.log(`${msg}${name}`);
-        return true; 
-    }
-};
-console.log(comliment("You are good coder ")("Sparta"));
+// let comliment = function(msg){
+//     return function(name){
+//         console.log(`${msg}${name}`);
+//         return true; 
+//     }
+// };
+// console.log(comliment("You are good coder ")("Sparta"));
 
 
 
-// ---------------------------2nd method
-let complimented = comliment("You are good coder");
-complimented("Rojers");
+// // ---------------------------2nd method
+// let complimented = comliment("You are good coder");
+// complimented("Rojers");
 
 
 
@@ -443,15 +482,74 @@ complimented("Rojers");
 
 
 // <<<<<<<------------------------setTimeout(function| code , delay,argu1,argu2,,,,,,)
-function greeting(){
-    console.log("Welcome to our coder help community");
-}
+// function greeting(){
+//     console.log("Welcome to our coder help community");
+// }
 // setTimeout(greeting,3000)// given value in milisecond
 
 
 // <<<<-----------Settimeinterval====================>
 
-setInterval=(greeting,100,"jhon")
+// setInterval=(greeting,100,"jhon")
 
 
-// <<<========================Hoisting============================>>>>>\
+// // <<<========================Hoisting============================>>>>>\
+// console.log(sum)
+// var sum = i+j
+// var i = 10
+// var j = 15
+
+// only var and normal function declaration accepted hoisting -- hoisting means we can declare any where it and use anywhere like as variable and function declared in last and its used in first 
+
+// //  <<<==================Objects ===================>>
+// let car = {
+//     color:"blue",
+//     model:"alaska",
+//     company:"honda",
+//     model_no:"15463863"
+// }
+// console.log(car)
+
+// //-------------how to access property in object---->
+// console.log(car["color"])
+
+// //   dot method
+// console.log(car.company)
+
+// let propertyNAme= "color";
+// console.log(car[propertyNAme])
+// console.log(car.propertyNAme)// use direct property name 
+
+
+// // modify the object property
+// car["color"] = "black"
+// console.log(car["color"])
+
+
+// // delete property in bject
+// let obj = {
+//     prop1 : "value1",
+//     prop2 : "value2"
+// }
+// console.log(obj)
+// delete obj["prop1"]// delete property always return true 
+// console.log(obj)
+
+
+
+// // <<<<===========Function vs Method ===================>>
+// let agecalculation = function(birthyear){
+//     let age = 2023-birthyear
+//     console.log(`current age is : ${age}`)
+// }
+// console.log(agecalculation(2001))
+
+// method >-- method is nothng but object property holding function as value
+
+// let person = {
+//     agecalculation : function(birthyear){
+//         let age = 2023-birthyear
+//          return age
+//     }
+// }
+// console.log(`current age is : ${person.agecalculation(1990)}`)
