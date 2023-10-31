@@ -1,19 +1,12 @@
-// getting element by using queryselcetor
-
-// query selector return fist element that match css selector
-
-// To get all matched element then we use queryselector all
-
-// let resultElement = document.querySelectorAll('p')
-
-
-// console.log(resultElement);
-
-// Acess element with class
-let resultElement = document.querySelector('.para');
-
-console.log(resultElement); 
-
-// Acess element by id
-let resultElements = document.querySelector('#shead');
-console.dir(resultElements);
+// 
+const div = document.createElement("div")
+console.log(div);
+div.className = "main"
+div.id = "met"
+div.setAttribute("title","dom-manupulation ")
+div.style.backgroundColor = "green"
+div.style.padding = "15px"
+// div.innerText = "manupulate the div by using javascript"
+const addText = document.createTextNode("document manipulate by using javascript")
+div.append(addText)
+div.body.addChild(div)
