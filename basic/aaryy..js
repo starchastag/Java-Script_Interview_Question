@@ -18,3 +18,14 @@ let c = prompt("Enter a number ")
 c = Number.parseInt(c)
 arr.push(c)
 console.log(c)
+
+
+// working with arrays 
+
+let letters = ['a','v','x'];
+
+// Reverse array
+let reverse = letters.reverse();
+
+console.log(reverse);
+console.log(letters);
