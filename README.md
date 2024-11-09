@@ -1,6 +1,6 @@
 -----------------javascript Functions Based 50+ Questions for 
 Here's a list of 50 JavaScript function-based interview questions along with their answers. These questions cover a broad range of JavaScript topics, including closures, asynchronous programming, array manipulation, object handling, recursion, and higher-order functions, which are commonly explored in technical interviews.
-
+=======================================================================================================
 --------------------------------------------------------------------------------------------------------
 Question 1: Write a function that creates a counter using closures.
                            ⤵️
