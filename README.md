@@ -1,3 +1,4 @@
+<<<<<<< HEAD
                  JavaScript Array Methods
 
 ---
@@ -381,6 +382,12 @@ Here are Detailed about answer :
 
 ---
 
+=======
+-----------------javascript Functions Based 50+ Questions for 
+Here's a list of 50 JavaScript function-based interview questions along with their answers. These questions cover a broad range of JavaScript topics, including closures, asynchronous programming, array manipulation, object handling, recursion, and higher-order functions, which are commonly explored in technical interviews.
+=======================================================================================================
+--------------------------------------------------------------------------------------------------------
+>>>>>>> dbb19076008a45530e8d13293e898110d69c4ba4
 Question 1: Write a function that creates a counter using closures.
 ⤵️
 Write a function createCounter that returns a function that increments and returns a counter value each time it's called. The counter should start at 0.
@@ -677,7 +684,14 @@ return arr.reduce((flat, item) => flat.concat(Array.isArray(item) ? flattenArray
     return exponent === 0 ? 1 : base \* power(base, exponent - 1);
     }
 30. Write a function to check if a given year is a leap year.
+<<<<<<< HEAD
     Answer:👉
     function isLeapYear(year) {
     return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
     }
+=======
+Answer:👉
+            function isLeapYear(year) {
+                return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+            }
+>>>>>>> dbb19076008a45530e8d13293e898110d69c4ba4
