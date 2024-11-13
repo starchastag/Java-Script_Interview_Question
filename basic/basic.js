@@ -135,42 +135,6 @@ console.log("Hello Saprta");
 
 // const sym = Symbol('example');
 // String(sym);
-// ===============================Array======================
-
-// // three method in Array
-// acessior
-// iteration
-// mutator
-// <<===============for each method in array
-const books =[
-    "the lord of the rigs",
-    "here we got ot",
-    "digital forencis",
-]
-const flipTitles = function (elem,index){
-    console.log(elem.split(' ').reverse().join(' '));
-}
-books.forEach(flipTitles);
-
-
-
-
-// a funtion called gruo array elements that takes an array an interger n as arguments and gruops the element of the array in n subarray
-
-function grupArrayElements(inputArr,n){
-    // check if n is vaild number
-    const result = []
-    if(n<=0 || (Number.isInteger(n))){
-        return result;
-    }
-   
-// length of the subarray
-    const len = Math.floor(inputArr.length / n);
-    // initialise th Array
-    let stat
-
-
-}
 
 
 
