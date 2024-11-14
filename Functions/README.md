@@ -1,3 +1,236 @@
+Function:
+        In JavaScript, a function is a block of reusable code designed to perform a specific task. Functions help organize code, make it modular, and avoid redundancy by allowing repeated use. They can take inputs, process data, and return an output.
+
+Here's an overview of JavaScript functions, types, and some common interview questions with sample answers.
+
+Basic Function Syntax
+
+    function functionName(parameters) {
+                    // function body
+                    return result; // optional
+            }
+
+    Function Name: Identifies the function.
+    Parameters: Inputs for the function, passed in as arguments when calling the function.
+    Function Body: The code block containing the statements to execute.
+    Return Statement: Optional; specifies the output of the function.
+
+
+
+Function Types in JavaScript:  >>
+
+Function Declaration:
+                 Defined with the function keyword and can be hoisted (available before declaration).
+
+
+    function add(a, b) {
+    return a + b;
+    }
+Function Expression:
+                 Assigned to a variable. It is not hoisted, so it cannot be used before its declaration.
+
+
+    const multiply = function(a, b) {
+        return a * b;
+    };
+
+
+Arrow Function:
+             A concise syntax introduced in ES6. Does not have its own this context and is usually used for anonymous functions or shorter syntax.
+
+
+    const divide = (a, b) => a / b;
+
+Immediately Invoked Function Expression (IIFE): 
+                    A function that executes as soon as it’s defined, often used to create a private scope.
+
+
+        (function() {
+                console.log("IIFE executed");
+        })();
+
+
+जावास्क्रिप्ट में, एक function एक reuseable कोड का ब्लॉक है जिसे एक specfic
+
+कार्य करने के लिए डिज़ाइन किया गया है। फ़ंक्शन कोड को व्यवस्थित करने, इसे 
+
+moduler बनाने और पुनरावृत्ति(repeted use) की अनुमति देकर पुनरावृत्ति
+
+(redundency) से बचने में मदद करते हैं।
+
+     वे इनपुट ले सकते हैं, डेटा को संसाधित कर सकते हैं, और एक आउटपुट वापस 
+
+     कर सकते हैं। यहाँ जावास्क्रिप्ट फ़ंक्शनों, प्रकारों और कुछ सामान्य 
+
+     साक्षात्कार प्रश्नों के साथ नमूना उत्तरों का एक अवलोकन है।
+
+
+
+    function functionName ( parameters ) {
+                // फ़ंक्शन बॉडी
+                return result; // वैकल्पिक
+        }
+
+फ़ंक्शन नाम: फ़ंक्शन की पहचान करता है।
+
+पैरामीटर: फ़ंक्शन के लिए इनपुट, जो फ़ंक्शन को कॉल करते समय argument के रूप में पास किए जाते हैं।
+
+फ़ंक्शन बॉडी: वह कोड ब्लॉक जिसमें contain करने के लिए कथन होते हैं।
+
+रिटर्न स्टेटमेंट: वैकल्पिक; फ़ंक्शन के आउटपुट को निर्दिष्ट करता है।
+
+
+
+------------------Javascript Questions:
+
+What are higher-order functions in JavaScript?
+
+Answer:
+
+A higher-order function is a function that can take other functions as arguments, return a function, or both. This concept allows functions to be more flexible and reusable.
+
+Example:
+
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+function processUser(name, callback) {
+    return callback(name);
+}
+
+console.log(processUser("Alice", greet)); // Output: Hello, Alice!
+
+2. What is the difference between call, apply, and bind?
+
+Answer:
+
+call: Invokes a function with a specified this context and individual arguments.
+
+function introduce(greeting) {
+    console.log(`${greeting}, I am ${this.name}`);
+}
+
+const person = { name: "Alice" };
+introduce.call(person, "Hello"); // Output: Hello, I am Alice
+apply: Similar to call, but takes arguments as an array.
+
+    introduce.apply(person, ["Hi"]); // Output: Hi, I am Alice
+bind: Returns a new function with the specified this context, but does not immediately invoke it.
+
+
+    const introduceAlice = introduce.bind(person, "Hey");
+    introduceAlice(); // Output: Hey, I am Alice
+
+3. What is a closure in JavaScript?
+
+Answer: A closure is a function that remembers its outer scope, even after that scope has finished executing. This allows functions to have private variables or maintain state.
+
+Example:
+
+function counter() {
+    let count = 0;
+    return function() {
+        count++;
+        return count;
+    };
+}
+
+const increment = counter();
+console.log(increment()); // Output: 1
+console.log(increment()); // Output: 2
+In this example, increment is a closure that retains access to the count variable, even after counter has executed.
+
+4. How can you implement a debounce function in JavaScript?
+
+Answer: A debounce function ensures that a function is not called too frequently, especially in response to rapid events like scrolling or resizing.
+
+Example:
+
+function debounce(func, delay) {
+    let timeoutId;
+    return function(...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func.apply(this, args), delay);
+    };
+}
+
+// Usage: debounce on a scroll event
+window.addEventListener('scroll', debounce(() => {
+    console.log("Scroll event handler called");
+}, 300));
+
+In this example, debounce waits for the specified delay before executing the function. If the event is triggered again within the delay period, the timer resets.
+
+5. Explain the difference between function declaration and function expression.
+Answer:
+
+A function declaration is hoisted, meaning it can be called before it’s defined.
+
+
+sayHello(); // Output: Hello
+
+function sayHello() {
+    console.log("Hello");
+}
+
+A function expression is assigned to a variable and is not hoisted, so it can only be used after its declaration.
+
+
+const sayGoodbye = function() {
+    console.log("Goodbye");
+};
+
+sayGoodbye(); // Output: Goodbye
+
+6. How do you implement a recursive function?
+
+Answer: A recursive function is a function that calls itself until it reaches a base condition.
+
+Example: Factorial of a number
+
+function factorial(n) {
+    if (n === 0) {
+        return 1; // Base case
+    }
+    return n * factorial(n - 1); // Recursive case
+}
+
+console.log(factorial(5)); // Output: 120
+In this example, factorial calls itself with n - 1 until n is 0.
+
+7. What is the purpose of the this keyword in JavaScript functions?
+Answer: 
+        The this keyword in JavaScript refers to the object that is executing the current function. Its value depends on the execution context in which the function is called. In regular functions, this refers to the calling object. In arrow functions, this is lexically bound to the context where the function was defined.
+
+Example:
+
+    const person = {
+         name: "Alice",
+         sayName: function() {
+          console.log(this.name);
+         }
+    };
+
+person.sayName(); // Output: Alice
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ===========================================================================
 -----------------javascript Functions Based 50+ Questions for 
 
